@@ -1,0 +1,136 @@
+\hypertarget{class_audio_plugin}{}\doxysection{Audio\+Plugin Class Reference}
+\label{class_audio_plugin}\index{AudioPlugin@{AudioPlugin}}
+
+
+{\ttfamily \#include $<$Plugin\+Processor.\+h$>$}
+
+Inheritance diagram for Audio\+Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_audio_plugin}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_audio_plugin_afb06bb9740e18b992aebf7e8993ef478}{Audio\+Plugin}} ()
+\item 
+\mbox{\hyperlink{class_audio_plugin_a65f485647f37a2e442c737d167317c21}{$\sim$\+Audio\+Plugin}} ()
+\item 
+void \mbox{\hyperlink{class_audio_plugin_a692788d98f397d7702decc451cc210f0}{assertion}} () override
+\begin{DoxyCompactList}\small\item\em Assertions to check Constructor succeeded. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{class_audio_plugin_aa5a36203498532dfca4efb2256e36cd3}{name}} () const noexcept
+\item 
+void \mbox{\hyperlink{class_audio_plugin_a44af4ca29bae091660862c8f7c2624b2}{prepare}} ()
+\item 
+void \mbox{\hyperlink{class_audio_plugin_ada6a3dd33946629e483621a729f3bb8c}{reset}} ()
+\item 
+\mbox{\hyperlink{class_float}{Float}} \mbox{\hyperlink{class_audio_plugin_af39aee7be230d652d4cb9f137c975551}{process}} (\mbox{\hyperlink{class_float}{Float}} \&x) override
+\item 
+\mbox{\hyperlink{class_float}{Float}} \mbox{\hyperlink{class_audio_plugin_ab79b749fdfab246ef58e1ce9b541be7c}{process\+Bypass}} (\mbox{\hyperlink{class_float}{Float}} \&x) override
+\item 
+\mbox{\hyperlink{struct_process_spec}{Process\+Spec}} \& \mbox{\hyperlink{class_audio_plugin_ab498568ca9b93b4eb4a11944e1d2b53f}{get\+Spec}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_spec}{Process\+Spec}} \mbox{\hyperlink{class_audio_plugin_a6ddcdd6b403981a747f3aad681697002}{spec}}
+\item 
+\mbox{\hyperlink{class_plugin_wrapper}{Plugin\+Wrapper}} \mbox{\hyperlink{class_audio_plugin_ab367a7ffc87e5005170e37710a471221}{processor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_audio_plugin_afb06bb9740e18b992aebf7e8993ef478}\label{class_audio_plugin_afb06bb9740e18b992aebf7e8993ef478}} 
+\index{AudioPlugin@{AudioPlugin}!AudioPlugin@{AudioPlugin}}
+\index{AudioPlugin@{AudioPlugin}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{AudioPlugin()}{AudioPlugin()}}
+{\footnotesize\ttfamily Audio\+Plugin\+::\+Audio\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_audio_plugin_a65f485647f37a2e442c737d167317c21}\label{class_audio_plugin_a65f485647f37a2e442c737d167317c21}} 
+\index{AudioPlugin@{AudioPlugin}!````~AudioPlugin@{$\sim$AudioPlugin}}
+\index{````~AudioPlugin@{$\sim$AudioPlugin}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{$\sim$AudioPlugin()}{~AudioPlugin()}}
+{\footnotesize\ttfamily Audio\+Plugin\+::$\sim$\+Audio\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_audio_plugin_a692788d98f397d7702decc451cc210f0}\label{class_audio_plugin_a692788d98f397d7702decc451cc210f0}} 
+\index{AudioPlugin@{AudioPlugin}!assertion@{assertion}}
+\index{assertion@{assertion}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{assertion()}{assertion()}}
+{\footnotesize\ttfamily void Audio\+Plugin\+::assertion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Assertions to check Constructor succeeded. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_audio_processor_a22ce348aa6ca5511e39517fedf3e6f93}{Audio\+Processor}}.
+
+\mbox{\Hypertarget{class_audio_plugin_ab498568ca9b93b4eb4a11944e1d2b53f}\label{class_audio_plugin_ab498568ca9b93b4eb4a11944e1d2b53f}} 
+\index{AudioPlugin@{AudioPlugin}!getSpec@{getSpec}}
+\index{getSpec@{getSpec}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{getSpec()}{getSpec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_spec}{Process\+Spec}} \& Audio\+Plugin\+::get\+Spec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_audio_plugin_aa5a36203498532dfca4efb2256e36cd3}\label{class_audio_plugin_aa5a36203498532dfca4efb2256e36cd3}} 
+\index{AudioPlugin@{AudioPlugin}!name@{name}}
+\index{name@{name}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const char $\ast$ Audio\+Plugin\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_audio_plugin_a44af4ca29bae091660862c8f7c2624b2}\label{class_audio_plugin_a44af4ca29bae091660862c8f7c2624b2}} 
+\index{AudioPlugin@{AudioPlugin}!prepare@{prepare}}
+\index{prepare@{prepare}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Audio\+Plugin\+::prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_audio_plugin_af39aee7be230d652d4cb9f137c975551}\label{class_audio_plugin_af39aee7be230d652d4cb9f137c975551}} 
+\index{AudioPlugin@{AudioPlugin}!process@{process}}
+\index{process@{process}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_float}{Float}} Audio\+Plugin\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_float}{Float}} \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_audio_processor_a2b2ed57e002518835363af737da7f030}{Audio\+Processor}}.
+
+\mbox{\Hypertarget{class_audio_plugin_ab79b749fdfab246ef58e1ce9b541be7c}\label{class_audio_plugin_ab79b749fdfab246ef58e1ce9b541be7c}} 
+\index{AudioPlugin@{AudioPlugin}!processBypass@{processBypass}}
+\index{processBypass@{processBypass}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{processBypass()}{processBypass()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_float}{Float}} Audio\+Plugin\+::process\+Bypass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_float}{Float}} \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_audio_processor_a12b8497582d11c5d88ab52c480c310e5}{Audio\+Processor}}.
+
+\mbox{\Hypertarget{class_audio_plugin_ada6a3dd33946629e483621a729f3bb8c}\label{class_audio_plugin_ada6a3dd33946629e483621a729f3bb8c}} 
+\index{AudioPlugin@{AudioPlugin}!reset@{reset}}
+\index{reset@{reset}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Audio\+Plugin\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_audio_plugin_ab367a7ffc87e5005170e37710a471221}\label{class_audio_plugin_ab367a7ffc87e5005170e37710a471221}} 
+\index{AudioPlugin@{AudioPlugin}!processor@{processor}}
+\index{processor@{processor}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{processor}{processor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plugin_wrapper}{Plugin\+Wrapper}} Audio\+Plugin\+::processor}
+
+\mbox{\Hypertarget{class_audio_plugin_a6ddcdd6b403981a747f3aad681697002}\label{class_audio_plugin_a6ddcdd6b403981a747f3aad681697002}} 
+\index{AudioPlugin@{AudioPlugin}!spec@{spec}}
+\index{spec@{spec}!AudioPlugin@{AudioPlugin}}
+\doxysubsubsection{\texorpdfstring{spec}{spec}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_spec}{Process\+Spec}} Audio\+Plugin\+::spec}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/objects/\mbox{\hyperlink{_plugin_processor_8h}{Plugin\+Processor.\+h}}\end{DoxyCompactItemize}

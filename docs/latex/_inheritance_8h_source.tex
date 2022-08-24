@@ -1,0 +1,49 @@
+\hypertarget{_inheritance_8h_source}{}\doxysection{Inheritance.\+h}
+\label{_inheritance_8h_source}\index{src/objects/Inheritance.h@{src/objects/Inheritance.h}}
+\mbox{\hyperlink{_inheritance_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef INHERITANCE\_H\_INCLUDED}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define INHERITANCE\_H\_INCLUDED}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_abstract}{Abstract}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_abstract_a707165de3d35842b9faaafd36d01efcc}{Abstract}}();}
+\DoxyCodeLine{11     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_abstract_a195e08531b3996fedb58ee7fe742df53}{\string~Abstract}}() = 0;}
+\DoxyCodeLine{12     \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_abf7046f337c2f875810ab72e145ed4f0}{getInt}}() = 0;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_a6fd25338e5a95d2e7b0230f517c56db5}{x}};}
+\DoxyCodeLine{15 \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_base}{Base}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract}{Abstract}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_base_a5ffe0568374d8b9b4c4ec32953fd6453}{Base}}()\{ std::cout << \textcolor{stringliteral}{"{}Constructed Base = "{}} << \textcolor{keyword}{sizeof}(*this) << std::endl; \}}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_base_a722da881b6c70cfcbde9243abcfbf334}{\string~Base}}()\{ std::cout << \textcolor{stringliteral}{"{}Destroyed Base = "{}} << \textcolor{keyword}{sizeof}(*this) << std::endl; \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_ac79830151765470fbd2af3a4b077210c}{getInt}}()\{ \textcolor{keywordflow}{return} 1; \}}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_base_a5d2527f07ea5d35e1eb0dc6d92480ca5}{getDbl}}() \{ \textcolor{keywordflow}{return} 2.0; \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_aab80ad28a642638be4bd727d39e1c603}{y}};}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_derived}{Derived}} final : \textcolor{keyword}{public} \mbox{\hyperlink{class_base}{Base}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_derived_a62feae88ad8218ab29620f2cebb1447b}{Derived}}()\{ std::cout << \textcolor{stringliteral}{"{}Constructed Derived = "{}} << \textcolor{keyword}{sizeof}(*this) << std::endl; \}}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_derived_ac26402f2e2eeb518745d36cbaa8139ca}{\string~Derived}}()\{ std::cout << \textcolor{stringliteral}{"{}Destroyed Derived = "{}} << \textcolor{keyword}{sizeof}(*this) << std::endl; \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_derived_a52d12fdebb1d28e9b24d37777b2051df}{getDbl}}()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} 3.0; \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_derived_aa550b2ccafd410311d8863fc1cf8e444}{z}};}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \mbox{\hyperlink{class_abstract_a707165de3d35842b9faaafd36d01efcc}{Abstract::Abstract}}()  \{ std::cout << \textcolor{stringliteral}{"{}Constructed Abstract = "{}} << \textcolor{keyword}{sizeof}(*this) << std::endl; \}}
+\DoxyCodeLine{41 \mbox{\hyperlink{class_abstract_a195e08531b3996fedb58ee7fe742df53}{Abstract::\string~Abstract}}() \{ std::cout << \textcolor{stringliteral}{"{}Destroyed Abstract = "{}} << \textcolor{keyword}{sizeof}(*this) << std::endl; \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INHERITANCE\_H\_INCLUDED}}
+
+\end{DoxyCode}

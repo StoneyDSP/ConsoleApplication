@@ -1,0 +1,62 @@
+\hypertarget{_plugin_wrapper_8h_source}{}\doxysection{Plugin\+Wrapper.\+h}
+\label{_plugin_wrapper_8h_source}\index{src/objects/PluginWrapper.h@{src/objects/PluginWrapper.h}}
+\mbox{\hyperlink{_plugin_wrapper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Float.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_audio_plugin}{AudioPlugin}};}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{struct_process_spec}{ProcessSpec}};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_plugin_wrapper}{PluginWrapper}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_plugin_wrapper_a542610eed3ee1bb742f5a6bfed9c8f6d}{PluginWrapper}}(\mbox{\hyperlink{class_audio_plugin}{AudioPlugin}}\& p) : \mbox{\hyperlink{class_plugin_wrapper_a227da986249e4bba95b4dd0dd08c2ac3}{audioProcessor}}(p)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         std::cout << \&(*this) << \textcolor{stringliteral}{"{} -\/ "{}} << \textcolor{keyword}{typeid}(*this).\mbox{\hyperlink{class_audio_plugin_aa5a36203498532dfca4efb2256e36cd3}{name}}() << \textcolor{stringliteral}{"{} -\/ Called Copy Constructor!"{}} << std::endl;}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_plugin_wrapper_ae8a882e4ac2533181b85ccc596301d4b}{assertion}}();}
+\DoxyCodeLine{19         std::cout << \&(*this) << \textcolor{stringliteral}{"{} -\/ "{}} << \textcolor{keyword}{typeid}(*this).name() << \textcolor{stringliteral}{"{} -\/ Default Constructed!"{}} << std::endl;}
+\DoxyCodeLine{20         std::cout << std::endl;}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_plugin_wrapper_a029dd793921d34c86161377f038ffd30}{\string~PluginWrapper}}()}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         std::cout << \&(*this) << \textcolor{stringliteral}{"{} -\/ "{}} << \textcolor{keyword}{typeid}(*this).name() << \textcolor{stringliteral}{"{} -\/ Called Destructor!"{}} << std::endl;}
+\DoxyCodeLine{25         std::cout << \&(*this) << \textcolor{stringliteral}{"{} -\/ "{}} << \textcolor{keyword}{typeid}(*this).name() << \textcolor{stringliteral}{"{} -\/ Destroyed!"{}} << std::endl;}
+\DoxyCodeLine{26         std::cout << std::endl;}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{//==========================================================================}}
+\DoxyCodeLine{31 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_plugin_wrapper_ae8a882e4ac2533181b85ccc596301d4b}{assertion}}() }
+\DoxyCodeLine{32     \{ }
+\DoxyCodeLine{33         assert(\textcolor{keyword}{this});}
+\DoxyCodeLine{34         std::cout << \&(*this) << \textcolor{stringliteral}{"{} -\/ "{}} << \textcolor{keyword}{typeid}(*this).name() << \textcolor{stringliteral}{"{} -\/ Passed assertion check!"{}} << std::endl;}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_plugin_wrapper_a331a425964d5212df2efeef9920129c6}{prepare}}(\mbox{\hyperlink{struct_process_spec}{ProcessSpec}}\& spec)}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39         std::cout << \&(*this) << \textcolor{stringliteral}{"{} -\/ "{}} << \textcolor{keyword}{typeid}(*this).name() << \textcolor{stringliteral}{"{} -\/ Called Function: void prepare()"{}} << std::endl;}
+\DoxyCodeLine{40         std::cout << std::endl;}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_plugin_wrapper_ab33e16f6eb8b4d7cad1bbf48b62bde46}{reset}}()}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         std::cout << \&(*this) << \textcolor{stringliteral}{"{} -\/ "{}} << \textcolor{keyword}{typeid}(*this).name() << \textcolor{stringliteral}{"{} -\/ Called Function: void reset()"{}} << std::endl;}
+\DoxyCodeLine{46         std::cout << std::endl;}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \mbox{\hyperlink{class_float}{Float}} \mbox{\hyperlink{class_plugin_wrapper_a3eaf34d6a4a5b6566a80d5187bb7ba44}{process}}(\mbox{\hyperlink{class_float}{Float}}\& x)}
+\DoxyCodeLine{50     \{}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \mbox{\hyperlink{class_audio_plugin}{AudioPlugin}}\& \mbox{\hyperlink{class_plugin_wrapper_a227da986249e4bba95b4dd0dd08c2ac3}{audioProcessor}};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \mbox{\hyperlink{class_float}{Float}} \mbox{\hyperlink{class_plugin_wrapper_ac57723f06dacdbb77bdb1b8472f278c5}{var}} \{1.0F\};}
+\DoxyCodeLine{57 \};}
+
+\end{DoxyCode}

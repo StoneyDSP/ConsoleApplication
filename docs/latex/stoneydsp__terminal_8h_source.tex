@@ -1,0 +1,187 @@
+\hypertarget{stoneydsp__terminal_8h_source}{}\doxysection{stoneydsp\+\_\+terminal.\+h}
+\label{stoneydsp__terminal_8h_source}\index{src/modules/stoneydsp\_core/core/stoneydsp\_terminal.h@{src/modules/stoneydsp\_core/core/stoneydsp\_terminal.h}}
+\mbox{\hyperlink{stoneydsp__terminal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef projectName}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define projectName "{}yourProject"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef projectVersion}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define projectVersion "{}v0.0.0.1"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef companyName}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define companyName "{}yourCompany"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef website}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define website "{}yourWebsite"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifndef TERMINAL\_H\_INCLUDED}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define TERMINAL\_H\_INCLUDED}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacestoneydsp}{stoneydsp}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{struct }\mbox{\hyperlink{structstoneydsp_1_1_args}{Args}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} \mbox{\hyperlink{structstoneydsp_1_1_args_a842696b4d19a6c1cc282a9b88048040c}{argc}}\{ 0 \};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{char}** \mbox{\hyperlink{structstoneydsp_1_1_args_a136441fe1b7430751987d07f97766bc3}{argv}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{char}** \mbox{\hyperlink{structstoneydsp_1_1_args_a684dfbe75c585bf0574298b8b1517a37}{envp}}\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{enum} \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}{Alignment}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a14e47107158b613c0391018a93712261}{LEFT}},}
+\DoxyCodeLine{48     \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}},}
+\DoxyCodeLine{49     \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a8042ea518b666814c0e3c22a04250481}{RIGHT}}}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}{Alignment}} position, std::string text, \textcolor{keywordtype}{int} blockWidth = \{80\})}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} spaces = 0;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordflow}{switch} (position)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}:}
+\DoxyCodeLine{59         spaces = ( blockWidth -\/ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(text.size()) ) / 2;}
+\DoxyCodeLine{60         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a8042ea518b666814c0e3c22a04250481}{RIGHT}}:}
+\DoxyCodeLine{63         spaces =   blockWidth -\/ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(text.size());}
+\DoxyCodeLine{64         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordflow}{if} (spaces > 0) std::cout << std::string (spaces, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{68     std::cout << text << std::endl;}
+\DoxyCodeLine{69 \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{class }\mbox{\hyperlink{classstoneydsp_1_1_console}{Console}}}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73 \textcolor{keyword}{public}:}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \mbox{\hyperlink{classstoneydsp_1_1_console_a8737cb245f5885b87b3fa36f7e804467}{Console}}() : \mbox{\hyperlink{classstoneydsp_1_1_console_aba08606407e50ddd58352c2f70db6fb1}{args}}(\mbox{\hyperlink{classstoneydsp_1_1_console_ae18081a942fec0a2b79be8ca24474b99}{getArgs}}())}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78     \mbox{\hyperlink{classstoneydsp_1_1_console_a539769c9eda2bbc5ebed58ad5799620b}{Console}}(\mbox{\hyperlink{structstoneydsp_1_1_args}{Args}}\& arguments) : \mbox{\hyperlink{classstoneydsp_1_1_console_aba08606407e50ddd58352c2f70db6fb1}{args}}(arguments)}
+\DoxyCodeLine{79     \{}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81     \mbox{\hyperlink{classstoneydsp_1_1_console_ad61e6a3b2277305542c23d3793f2e49d}{\string~Console}}()}
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{classstoneydsp_1_1_console_a54bd0ca83d5230583acde2cc028041c1}{prepare}}(\mbox{\hyperlink{structstoneydsp_1_1_args}{Args}}\& arguments)}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87         \mbox{\hyperlink{classstoneydsp_1_1_console_aba08606407e50ddd58352c2f70db6fb1}{args}}.\mbox{\hyperlink{structstoneydsp_1_1_args_a842696b4d19a6c1cc282a9b88048040c}{argc}} = arguments.\mbox{\hyperlink{structstoneydsp_1_1_args_a842696b4d19a6c1cc282a9b88048040c}{argc}};}
+\DoxyCodeLine{88         \mbox{\hyperlink{classstoneydsp_1_1_console_aba08606407e50ddd58352c2f70db6fb1}{args}}.\mbox{\hyperlink{structstoneydsp_1_1_args_a136441fe1b7430751987d07f97766bc3}{argv}} = arguments.\mbox{\hyperlink{structstoneydsp_1_1_args_a136441fe1b7430751987d07f97766bc3}{argv}};}
+\DoxyCodeLine{89         \mbox{\hyperlink{classstoneydsp_1_1_console_aba08606407e50ddd58352c2f70db6fb1}{args}}.\mbox{\hyperlink{structstoneydsp_1_1_args_a684dfbe75c585bf0574298b8b1517a37}{envp}} = arguments.\mbox{\hyperlink{structstoneydsp_1_1_args_a684dfbe75c585bf0574298b8b1517a37}{envp}};}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \mbox{\hyperlink{structstoneydsp_1_1_args}{Args}}\& \mbox{\hyperlink{classstoneydsp_1_1_console_ae18081a942fec0a2b79be8ca24474b99}{getArgs}}()}
+\DoxyCodeLine{93     \{}
+\DoxyCodeLine{94         \textcolor{keywordflow}{return} \mbox{\hyperlink{classstoneydsp_1_1_console_aba08606407e50ddd58352c2f70db6fb1}{args}};}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keyword}{private}:}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \mbox{\hyperlink{structstoneydsp_1_1_args}{Args}}\& \mbox{\hyperlink{classstoneydsp_1_1_console_aba08606407e50ddd58352c2f70db6fb1}{args}};}
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}{nextLine}}()}
+\DoxyCodeLine{103 \{}
+\DoxyCodeLine{104     std::cout << std::endl;}
+\DoxyCodeLine{105 \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{lineBreak}}()}
+\DoxyCodeLine{108 \{}
+\DoxyCodeLine{109     std::cout << \textcolor{stringliteral}{"{}//============================================================================//"{}} << std::endl;}
+\DoxyCodeLine{110 \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{113 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_a24f24e1073b1907e4678540767e4fc89}{intro}}()}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115     \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{lineBreak}}();}
+\DoxyCodeLine{116     std::cout << \textcolor{stringliteral}{"{}//"{}}; \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}, \mbox{\hyperlink{stoneydsp__terminal_8h_a7f10f9b7262ec784206268e8631f0292}{projectName}});}
+\DoxyCodeLine{117     std::cout << \textcolor{stringliteral}{"{}//"{}}; \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}, \mbox{\hyperlink{stoneydsp__terminal_8h_a2f071f7984653ee54fcf17b26b489fef}{projectVersion}});}
+\DoxyCodeLine{118     std::cout << \textcolor{stringliteral}{"{}//"{}}; \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}, \mbox{\hyperlink{stoneydsp__terminal_8h_a16e69c42731408ad953a43ee63a47be3}{companyName}});}
+\DoxyCodeLine{119     std::cout << \textcolor{stringliteral}{"{}//"{}}; \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}, \mbox{\hyperlink{stoneydsp__terminal_8h_a8a841770c964ba610d65f4aae98994cd}{website}});}
+\DoxyCodeLine{120     \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{lineBreak}}();}
+\DoxyCodeLine{121     \mbox{\hyperlink{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}{nextLine}}();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}, \textcolor{stringliteral}{"{}Hello World!"{}});}
+\DoxyCodeLine{124     std::cout << std::endl;}
+\DoxyCodeLine{125     std::cin.get();}
+\DoxyCodeLine{126 \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{131 \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacestoneydsp_af6ccfb3dc20fd6e94dc68a8d80d00390}{outro}}()}
+\DoxyCodeLine{132 \{}
+\DoxyCodeLine{133     \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}, \textcolor{stringliteral}{"{}Goodbye World!"{}});}
+\DoxyCodeLine{134     std::cout << std::endl;}
+\DoxyCodeLine{135     std::cin.get();}
+\DoxyCodeLine{136     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{137 \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_aabc1157166a57df56615581b066f164c}{root}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int}\& argc, \textcolor{keywordtype}{char}* argv[], \textcolor{keywordtype}{char}* envp[])}
+\DoxyCodeLine{140 \{}
+\DoxyCodeLine{141     \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{lineBreak}}();}
+\DoxyCodeLine{142     std::cout << \textcolor{stringliteral}{"{}// "{}} << \&argc << std::endl;}
+\DoxyCodeLine{143     std::cout << \textcolor{stringliteral}{"{}// "{}} << *argv << std::endl;}
+\DoxyCodeLine{144     std::cout << \textcolor{stringliteral}{"{}// "{}} << *envp << std::endl;}
+\DoxyCodeLine{145     \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{lineBreak}}();}
+\DoxyCodeLine{146     \mbox{\hyperlink{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}{nextLine}}();}
+\DoxyCodeLine{147 \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_a6fe48450fd3de3eeaf7c1104e4f37016}{wait}}()}
+\DoxyCodeLine{150 \{}
+\DoxyCodeLine{151     \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}}(\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}, \textcolor{stringliteral}{"{}Press 'Enter' to continue!"{}});}
+\DoxyCodeLine{152     std::cin.get();}
+\DoxyCodeLine{153 \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{// void print(const char string[])}}
+\DoxyCodeLine{156 \textcolor{comment}{// \{}}
+\DoxyCodeLine{157 \textcolor{comment}{//     std::cout << string << std::endl;}}
+\DoxyCodeLine{158 \textcolor{comment}{//     stoneydsp::nextLine();}}
+\DoxyCodeLine{159 \textcolor{comment}{//     stoneydsp::wait();}}
+\DoxyCodeLine{160 \textcolor{comment}{// \}}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_a371ebe518736f366be7ba00d1714e18d}{endFunction}}()}
+\DoxyCodeLine{163 \{}
+\DoxyCodeLine{164     \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{lineBreak}}();}
+\DoxyCodeLine{165     \mbox{\hyperlink{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}{nextLine}}();}
+\DoxyCodeLine{166     \mbox{\hyperlink{namespacestoneydsp_a6fe48450fd3de3eeaf7c1104e4f37016}{wait}}();}
+\DoxyCodeLine{167     \mbox{\hyperlink{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}{nextLine}}();}
+\DoxyCodeLine{168 \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{keyword}{template} <\textcolor{keyword}{class}... Types>}
+\DoxyCodeLine{171 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_a6ecf745bee5285a4b47cf2a4face04a2}{ignore}}(Types\&\&... ignored);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{keyword}{template} <\textcolor{keyword}{class}... Types>}
+\DoxyCodeLine{174 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacestoneydsp_a6ecf745bee5285a4b47cf2a4face04a2}{ignore}}(Types\&\&... \textcolor{comment}{/*ignored*/}) \{\}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \} \textcolor{comment}{// namespace stoneydsp}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TERMINAL\_H\_INCLUDED}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{// \#include <Windows.h>}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{comment}{// bool Initialize( int\& w, int\& h )}}
+\DoxyCodeLine{186 \textcolor{comment}{// \{}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{comment}{//     CONSOLE\_SCREEN\_BUFFER\_INFO csbi;}}
+\DoxyCodeLine{189 \textcolor{comment}{//     HANDLE hStdOut = GetStdHandle( STD\_OUTPUT\_HANDLE );}}
+\DoxyCodeLine{190 \textcolor{comment}{//     if (!GetConsoleScreenBufferInfo( hStdOut, \&csbi ))}}
+\DoxyCodeLine{191 \textcolor{comment}{//         return false;}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{comment}{//     w = csbi.srWindow.Right  -\/ csbi.srWindow.Left + 1;}}
+\DoxyCodeLine{194 \textcolor{comment}{//     h = csbi.srWindow.Bottom -\/ csbi.srWindow.Top  + 1;}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{comment}{//     return true;}}
+\DoxyCodeLine{197 \textcolor{comment}{// \}}}
+
+\end{DoxyCode}

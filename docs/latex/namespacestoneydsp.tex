@@ -1,0 +1,151 @@
+\hypertarget{namespacestoneydsp}{}\doxysection{stoneydsp Namespace Reference}
+\label{namespacestoneydsp}\index{stoneydsp@{stoneydsp}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstoneydsp_1_1_args}{Args}}
+\item 
+class \mbox{\hyperlink{classstoneydsp_1_1_bit}{Bit}}
+\item 
+class \mbox{\hyperlink{classstoneydsp_1_1_console}{Console}}
+\item 
+class \mbox{\hyperlink{classstoneydsp_1_1_double}{Double}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classstoneydsp_1_1_double}{Double}} value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstoneydsp_1_1_int}{Int}}
+\begin{DoxyCompactList}\small\item\em Integer value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstoneydsp_1_1_logger}{Logger}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classstoneydsp_1_1_logger}{Logger}} class. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstoneydsp_1_1_math_constants}{Math\+Constants}}
+\item 
+class \mbox{\hyperlink{classstoneydsp_1_1_value}{Value}}
+\begin{DoxyCompactList}\small\item\em A generic value of type $<$\+T$>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}{Alignment}} \{ \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a14e47107158b613c0391018a93712261}{LEFT}}
+, \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{CENTRE}}
+, \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a8042ea518b666814c0e3c22a04250481}{RIGHT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{print}} (\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}{Alignment}} position, std\+::string text, int block\+Width=\{80\})
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}{next\+Line}} ()
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{line\+Break}} ()
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a24f24e1073b1907e4678540767e4fc89}{intro}} ()
+\begin{DoxyCompactList}\small\item\em Prints a startup message to the console. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacestoneydsp_af6ccfb3dc20fd6e94dc68a8d80d00390}{outro}} ()
+\begin{DoxyCompactList}\small\item\em Prints a shutdown message to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacestoneydsp_aabc1157166a57df56615581b066f164c}{root}} (const int \&argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, char $\ast$envp\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a6fe48450fd3de3eeaf7c1104e4f37016}{wait}} ()
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a371ebe518736f366be7ba00d1714e18d}{end\+Function}} ()
+\item 
+{\footnotesize template$<$class... Types$>$ }\\void \mbox{\hyperlink{namespacestoneydsp_a6ecf745bee5285a4b47cf2a4face04a2}{ignore}} (Types \&\&... ignored)
+\item 
+{\footnotesize template$<$class... Types$>$ }\\void \mbox{\hyperlink{namespacestoneydsp_a755bb0cdabb4a431f64eac588ab0e1eb}{ignore}} (Types \&\&...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}\label{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}} 
+\index{stoneydsp@{stoneydsp}!Alignment@{Alignment}}
+\index{Alignment@{Alignment}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{Alignment}{Alignment}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}{stoneydsp\+::\+Alignment}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!stoneydsp@{stoneydsp}}\index{stoneydsp@{stoneydsp}!LEFT@{LEFT}}}\mbox{\Hypertarget{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a14e47107158b613c0391018a93712261}\label{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a14e47107158b613c0391018a93712261}} 
+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CENTRE@{CENTRE}!stoneydsp@{stoneydsp}}\index{stoneydsp@{stoneydsp}!CENTRE@{CENTRE}}}\mbox{\Hypertarget{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}\label{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}} 
+CENTRE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!stoneydsp@{stoneydsp}}\index{stoneydsp@{stoneydsp}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a8042ea518b666814c0e3c22a04250481}\label{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a8042ea518b666814c0e3c22a04250481}} 
+RIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacestoneydsp_a371ebe518736f366be7ba00d1714e18d}\label{namespacestoneydsp_a371ebe518736f366be7ba00d1714e18d}} 
+\index{stoneydsp@{stoneydsp}!endFunction@{endFunction}}
+\index{endFunction@{endFunction}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{endFunction()}{endFunction()}}
+{\footnotesize\ttfamily void stoneydsp\+::end\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestoneydsp_a6ecf745bee5285a4b47cf2a4face04a2}\label{namespacestoneydsp_a6ecf745bee5285a4b47cf2a4face04a2}} 
+\index{stoneydsp@{stoneydsp}!ignore@{ignore}}
+\index{ignore@{ignore}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{ignore()}{ignore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class... Types$>$ \\
+void stoneydsp\+::ignore (\begin{DoxyParamCaption}\item[{Types \&\&...}]{ignored }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacestoneydsp_a755bb0cdabb4a431f64eac588ab0e1eb}\label{namespacestoneydsp_a755bb0cdabb4a431f64eac588ab0e1eb}} 
+\index{stoneydsp@{stoneydsp}!ignore@{ignore}}
+\index{ignore@{ignore}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{ignore()}{ignore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class... Types$>$ \\
+void stoneydsp\+::ignore (\begin{DoxyParamCaption}\item[{Types \&\&}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacestoneydsp_a24f24e1073b1907e4678540767e4fc89}\label{namespacestoneydsp_a24f24e1073b1907e4678540767e4fc89}} 
+\index{stoneydsp@{stoneydsp}!intro@{intro}}
+\index{intro@{intro}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{intro()}{intro()}}
+{\footnotesize\ttfamily void stoneydsp\+::intro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a startup message to the console. 
+
+\mbox{\Hypertarget{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}\label{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}} 
+\index{stoneydsp@{stoneydsp}!lineBreak@{lineBreak}}
+\index{lineBreak@{lineBreak}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{lineBreak()}{lineBreak()}}
+{\footnotesize\ttfamily void stoneydsp\+::line\+Break (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}\label{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}} 
+\index{stoneydsp@{stoneydsp}!nextLine@{nextLine}}
+\index{nextLine@{nextLine}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{nextLine()}{nextLine()}}
+{\footnotesize\ttfamily void stoneydsp\+::next\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestoneydsp_af6ccfb3dc20fd6e94dc68a8d80d00390}\label{namespacestoneydsp_af6ccfb3dc20fd6e94dc68a8d80d00390}} 
+\index{stoneydsp@{stoneydsp}!outro@{outro}}
+\index{outro@{outro}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{outro()}{outro()}}
+{\footnotesize\ttfamily int stoneydsp\+::outro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a shutdown message to the console. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classstoneydsp_1_1_int}{Int}} value of \textquotesingle{}0\textquotesingle{} to exit \char`\"{}main.\+cpp\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}\label{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}} 
+\index{stoneydsp@{stoneydsp}!print@{print}}
+\index{print@{print}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void stoneydsp\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}{Alignment}}}]{position,  }\item[{std\+::string}]{text,  }\item[{int}]{block\+Width = {\ttfamily \{80\}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestoneydsp_aabc1157166a57df56615581b066f164c}\label{namespacestoneydsp_aabc1157166a57df56615581b066f164c}} 
+\index{stoneydsp@{stoneydsp}!root@{root}}
+\index{root@{root}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{root()}{root()}}
+{\footnotesize\ttfamily void stoneydsp\+::root (\begin{DoxyParamCaption}\item[{const int \&}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$}]{envp\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestoneydsp_a6fe48450fd3de3eeaf7c1104e4f37016}\label{namespacestoneydsp_a6fe48450fd3de3eeaf7c1104e4f37016}} 
+\index{stoneydsp@{stoneydsp}!wait@{wait}}
+\index{wait@{wait}!stoneydsp@{stoneydsp}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void stoneydsp\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

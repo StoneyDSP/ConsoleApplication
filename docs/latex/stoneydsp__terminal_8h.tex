@@ -1,0 +1,106 @@
+\hypertarget{stoneydsp__terminal_8h}{}\doxysection{src/modules/stoneydsp\+\_\+core/core/stoneydsp\+\_\+terminal.h File Reference}
+\label{stoneydsp__terminal_8h}\index{src/modules/stoneydsp\_core/core/stoneydsp\_terminal.h@{src/modules/stoneydsp\_core/core/stoneydsp\_terminal.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstoneydsp_1_1_args}{stoneydsp\+::\+Args}}
+\item 
+class \mbox{\hyperlink{classstoneydsp_1_1_console}{stoneydsp\+::\+Console}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacestoneydsp}{stoneydsp}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stoneydsp__terminal_8h_a7f10f9b7262ec784206268e8631f0292}{project\+Name}}~\char`\"{}your\+Project\char`\"{}
+\item 
+\#define \mbox{\hyperlink{stoneydsp__terminal_8h_a2f071f7984653ee54fcf17b26b489fef}{project\+Version}}~\char`\"{}v0.\+0.\+0.\+1\char`\"{}
+\item 
+\#define \mbox{\hyperlink{stoneydsp__terminal_8h_a16e69c42731408ad953a43ee63a47be3}{company\+Name}}~\char`\"{}your\+Company\char`\"{}
+\item 
+\#define \mbox{\hyperlink{stoneydsp__terminal_8h_a8a841770c964ba610d65f4aae98994cd}{website}}~\char`\"{}your\+Website\char`\"{}
+\item 
+\#define \mbox{\hyperlink{stoneydsp__terminal_8h_ac771f180a5903a68e04f14cb952cf931}{TERMINAL\+\_\+\+H\+\_\+\+INCLUDED}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1}{stoneydsp\+::\+Alignment}} \{ \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a14e47107158b613c0391018a93712261}{stoneydsp\+::\+LEFT}}
+, \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1ad98df8dbc74bd361c1e4e122edd308ef}{stoneydsp\+::\+CENTRE}}
+, \mbox{\hyperlink{namespacestoneydsp_abc2d1c8cb1ad4d2df6e6d16bab99fbd1a8042ea518b666814c0e3c22a04250481}{stoneydsp\+::\+RIGHT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a19f1c9c8da02ad44d622079b3923bd89}{stoneydsp\+::print}} (Alignment position, std\+::string text, int block\+Width=\{80\})
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_afce2f7ebf8983c8d557842612886a430}{stoneydsp\+::next\+Line}} ()
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a6934a6a07876c08260804d8f326f4f54}{stoneydsp\+::line\+Break}} ()
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a24f24e1073b1907e4678540767e4fc89}{stoneydsp\+::intro}} ()
+\begin{DoxyCompactList}\small\item\em Prints a startup message to the console. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacestoneydsp_af6ccfb3dc20fd6e94dc68a8d80d00390}{stoneydsp\+::outro}} ()
+\begin{DoxyCompactList}\small\item\em Prints a shutdown message to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacestoneydsp_aabc1157166a57df56615581b066f164c}{stoneydsp\+::root}} (const int \&argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, char $\ast$envp\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a6fe48450fd3de3eeaf7c1104e4f37016}{stoneydsp\+::wait}} ()
+\item 
+void \mbox{\hyperlink{namespacestoneydsp_a371ebe518736f366be7ba00d1714e18d}{stoneydsp\+::end\+Function}} ()
+\item 
+{\footnotesize template$<$class... Types$>$ }\\void \mbox{\hyperlink{namespacestoneydsp_a6ecf745bee5285a4b47cf2a4face04a2}{stoneydsp\+::ignore}} (Types \&\&... ignored)
+\item 
+{\footnotesize template$<$class... Types$>$ }\\void \mbox{\hyperlink{namespacestoneydsp_a755bb0cdabb4a431f64eac588ab0e1eb}{stoneydsp\+::ignore}} (Types \&\&...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Nathan J. Hood (\href{mailto:nathanjhood@googlemail.com}{\texttt{ nathanjhood@googlemail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/08-\/13
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 @\+Stoney\+DSP 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{stoneydsp__terminal_8h_a16e69c42731408ad953a43ee63a47be3}\label{stoneydsp__terminal_8h_a16e69c42731408ad953a43ee63a47be3}} 
+\index{stoneydsp\_terminal.h@{stoneydsp\_terminal.h}!companyName@{companyName}}
+\index{companyName@{companyName}!stoneydsp\_terminal.h@{stoneydsp\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{companyName}{companyName}}
+{\footnotesize\ttfamily \#define company\+Name~\char`\"{}your\+Company\char`\"{}}
+
+\mbox{\Hypertarget{stoneydsp__terminal_8h_a7f10f9b7262ec784206268e8631f0292}\label{stoneydsp__terminal_8h_a7f10f9b7262ec784206268e8631f0292}} 
+\index{stoneydsp\_terminal.h@{stoneydsp\_terminal.h}!projectName@{projectName}}
+\index{projectName@{projectName}!stoneydsp\_terminal.h@{stoneydsp\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{projectName}{projectName}}
+{\footnotesize\ttfamily \#define project\+Name~\char`\"{}your\+Project\char`\"{}}
+
+\mbox{\Hypertarget{stoneydsp__terminal_8h_a2f071f7984653ee54fcf17b26b489fef}\label{stoneydsp__terminal_8h_a2f071f7984653ee54fcf17b26b489fef}} 
+\index{stoneydsp\_terminal.h@{stoneydsp\_terminal.h}!projectVersion@{projectVersion}}
+\index{projectVersion@{projectVersion}!stoneydsp\_terminal.h@{stoneydsp\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{projectVersion}{projectVersion}}
+{\footnotesize\ttfamily \#define project\+Version~\char`\"{}v0.\+0.\+0.\+1\char`\"{}}
+
+\mbox{\Hypertarget{stoneydsp__terminal_8h_ac771f180a5903a68e04f14cb952cf931}\label{stoneydsp__terminal_8h_ac771f180a5903a68e04f14cb952cf931}} 
+\index{stoneydsp\_terminal.h@{stoneydsp\_terminal.h}!TERMINAL\_H\_INCLUDED@{TERMINAL\_H\_INCLUDED}}
+\index{TERMINAL\_H\_INCLUDED@{TERMINAL\_H\_INCLUDED}!stoneydsp\_terminal.h@{stoneydsp\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{TERMINAL\_H\_INCLUDED}{TERMINAL\_H\_INCLUDED}}
+{\footnotesize\ttfamily \#define TERMINAL\+\_\+\+H\+\_\+\+INCLUDED}
+
+\mbox{\Hypertarget{stoneydsp__terminal_8h_a8a841770c964ba610d65f4aae98994cd}\label{stoneydsp__terminal_8h_a8a841770c964ba610d65f4aae98994cd}} 
+\index{stoneydsp\_terminal.h@{stoneydsp\_terminal.h}!website@{website}}
+\index{website@{website}!stoneydsp\_terminal.h@{stoneydsp\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{website}{website}}
+{\footnotesize\ttfamily \#define website~\char`\"{}your\+Website\char`\"{}}
+
