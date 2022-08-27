@@ -34,6 +34,17 @@ target_link_libraries (${CMAKE_PROJECT_NAME} PRIVATE fmt::fmt)
 find_package (CppUnit CONFIG REQUIRED)
 target_link_libraries (${CMAKE_PROJECT_NAME} PRIVATE CppUnit)
 
+# always require JUCE for the util library
+# find_package(JUCE CONFIG REQUIRED)
+
+# target_link_libraries(ConsoleApplication
+#     PRIVATE
+#         # ConsoleAppData            # If you'd created a binary data target, you'd link to it here
+#         juce::juce_core
+#     PUBLIC
+#         juce::juce_recommended_config_flags
+#         juce::juce_recommended_warning_flags)
+
 # Add configuration file.
 configure_file (
 	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h.in"
