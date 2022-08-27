@@ -31,6 +31,8 @@ int main(int argc, char* argv[], char* envp[])
 
     endFunction();
 
+    //juce::ConsoleApplication app;
+
     Double a{ 1 };
 
     Double b{ 2 };
@@ -42,6 +44,8 @@ int main(int argc, char* argv[], char* envp[])
     Double e{ 10 };
 
     endFunction();
+
+    //app.fail("?", 1);
 
     print(CENTRE, "Addition Tests");
     lineBreak();
