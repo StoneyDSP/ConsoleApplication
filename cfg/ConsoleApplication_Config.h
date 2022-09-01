@@ -20,7 +20,7 @@
  * @brief Defined project configuration information.
  *
  */
-#define companyName "yourCompany"
+#define companyName ""
 #define projectName "StoneyDSP"
 #define productName ""
 #define projectDescription ""
