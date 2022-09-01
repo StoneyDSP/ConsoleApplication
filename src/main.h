@@ -25,7 +25,7 @@
 
 // 3rd Party Library includes
 #include <cppunit/Asserter.h>
-//#include <juce_core/juce_core.h>
-#include "modules/stoneydsp_core/stoneydsp_core.h"
+#include <juce_core/juce_core.h>
+#include "../stoneydsp_core/stoneydsp_core.h"
 
 #endif // MAIN_H_INCLUDED
