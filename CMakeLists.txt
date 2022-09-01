@@ -2,7 +2,7 @@
 # and include sub-projects here.
 
 # CMake requirements.
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.15)
 
 
 # Create a CMake project here.
@@ -43,6 +43,9 @@ configure_file (
 	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h"
 )
 
+target_include_directories(ConsoleApplication PRIVATE ${LUA_INCLUDE_DIR})
+target_link_libraries(ConsoleApplication PRIVATE ${LUA_LIBRARIES})
+
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
 # into the build tree. This header should be included with `#include <JuceHeader.h>`. The include
 # path for this header will be automatically added to the target. The main function of the
@@ -78,7 +81,6 @@ target_sources(ConsoleApplication
      PRIVATE
 		# ConsoleApplication_Data           # If we'd created a binary data target above, we'd link to it here
 		fmt::fmt
-		CppUnit
         juce::juce_core
      PUBLIC
         juce::juce_recommended_config_flags
