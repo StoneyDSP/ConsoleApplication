@@ -7,6 +7,8 @@ cmake_minimum_required (VERSION 3.15)
 # Toolchain location. Stores result in the CMakeCache.
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Toolchain file")
 
+# Company/author name
+set(CMAKE_COMPANY_NAME "StoneyDSP" CACHE STRING "Company Name")
 
 # Create a CMake project here.
 # This is a standard CMake command.
@@ -39,12 +41,6 @@ add_executable (ConsoleApplication
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ConsoleApplication PROPERTY CXX_STANDARD 20)
 endif()
-
-# Add configuration file.
-configure_file (
-	"cfg/ConsoleApplication_Config.h.in"
-	"cfg/ConsoleApplication_Config.h"
-)
 
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
 # into the build tree. This header should be included with `#include <JuceHeader.h>`. The include

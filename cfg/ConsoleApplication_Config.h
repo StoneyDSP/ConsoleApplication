@@ -20,11 +20,10 @@
  * @brief Defined project configuration information.
  *
  */
-#define companyName "yourCompany"
-#define projectName "StoneyDSP"
-#define productName ""
-#define projectDescription ""
+#define companyName "StoneyDSP"
+#define projectName "ConsoleApplication"
+#define projectDescription "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
 #define projectVersion "v0.0.0.1"
-#define projectWebsite "https://stoneydsp.github.io/html/index.html"
+#define projectWebsite "https://stoneydsp.github.io/ConsoleApplication/html/index.html"
 
 #endif // CONFIG_H_INCLUDED
