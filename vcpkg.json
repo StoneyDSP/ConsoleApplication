@@ -3,5 +3,8 @@
 
     "name": "consoleapplication",
     "version-string": "0.0.1",
-    "dependencies": []
+    "dependencies": [
+        "cppunit",
+        "fmt"
+    ]
 }

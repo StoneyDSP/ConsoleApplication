@@ -4,6 +4,9 @@
 # CMake requirements.
 cmake_minimum_required (VERSION 3.15)
 
+# Toolchain location. Stores result in the CMakeCache.
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Toolchain file")
+
 
 # Create a CMake project here.
 # This is a standard CMake command.
@@ -43,14 +46,6 @@ configure_file (
 	"cfg/ConsoleApplication_Config.h"
 )
 
-target_include_directories(ConsoleApplication PRIVATE ${LUA_INCLUDE_DIR})
-
-target_link_libraries(ConsoleApplication
-	PRIVATE
-	${LUA_LIBRARIES}
-	fmt::fmt
-)
-
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
 # into the build tree. This header should be included with `#include <JuceHeader.h>`. The include
 # path for this header will be automatically added to the target. The main function of the
@@ -70,6 +65,10 @@ target_sources(ConsoleApplication
 	"cfg/ConsoleApplication_Config.h"
 )
 
+find_package (CppUnit CONFIG REQUIRED)
+find_package (fmt CONFIG REQUIRED)
+find_package (JUCE CONFIG REQUIRED)
+
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
 # a new static library target that will include all the binary resources. There is an optional
 # `NAMESPACE` argument that can specify the namespace of the generated binary data class. Finally,
@@ -84,13 +83,15 @@ target_sources(ConsoleApplication
 # This is a standard CMake command.
  target_link_libraries(ConsoleApplication
      PRIVATE
-		# ConsoleApplication_Data           # If we'd created a binary data target above, we'd link to it here
-		fmt::fmt
-        juce::juce_core
-     PUBLIC
-        juce::juce_recommended_config_flags
-        juce::juce_recommended_warning_flags
+	# ConsoleApplication_Data           # If we'd created a binary data target above, we'd link to it here
+	fmt::fmt
+	CppUnit
+	juce::juce_core
+	PUBLIC
+	juce::juce_recommended_config_flags
+	juce::juce_recommended_warning_flags
  )
+
 
 # Include sub-folder/projects to the build tree.
 add_subdirectory ("src")
@@ -129,8 +130,8 @@ else()
 endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 
 # Export options
-set(CMAKE_EXPORT_COMPILE_COMMANDS on)
-set(CMAKE_ENABLE_EXPORTS on)
+#set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+#set(CMAKE_ENABLE_EXPORTS on)
 
 # Add tests and install targets if needed. Comment out if not required.
 #include(CPACK)
