@@ -20,10 +20,11 @@
  * @brief Defined project configuration information.
  *
  */
-#define companyName "StoneyDSP"
-#define projectName "ConsoleApplication"
-#define projectDescription "Console Application with CMake"
+#define companyName ""
+#define projectName "StoneyDSP"
+#define productName ""
+#define projectDescription ""
 #define projectVersion "v0.0.0.1"
-#define projectWebsite "https://stoneydsp.github.io/ConsoleApplication/html/index.html"
+#define projectWebsite "https://stoneydsp.github.io/html/index.html"
 
 #endif // CONFIG_H_INCLUDED
