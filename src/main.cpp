@@ -13,6 +13,8 @@
 
 #include "main.h"
 
+CppUnit::Asserter testing;
+
 /** Main.
  * @brief Entry point for program execution.
  *
@@ -31,7 +33,7 @@ int main(int argc, char* argv[], char* envp[])
 
     endFunction();
 
-    //juce::ConsoleApplication app;
+    juce::ConsoleApplication app;
 
     Double a{ 1 };
 
