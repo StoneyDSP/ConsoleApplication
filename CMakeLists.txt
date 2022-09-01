@@ -10,20 +10,27 @@ cmake_minimum_required (VERSION 3.8)
 project (
 	"ConsoleApplication"
 	VERSION 0.0.0.1
-	DESCRIPTION "Console Application with CMake"
+	DESCRIPTION "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
 	HOMEPAGE_URL https://stoneydsp.github.io/ConsoleApplication/html/index.html
 	LANGUAGES C CXX
+)
+
+add_executable (ConsoleApplication
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.h"
+	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h.in"
+	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h"
 )
 
 # `juce_add_console_app` adds an executable target with the name passed as the first argument
 # (ConsoleAppExample here). This target is a normal CMake target, but has a lot of extra properties
 # set up by default. This function accepts many optional arguments. Check the readme at
 # `docs/CMake API.md` in the JUCE repo for the full list.
-juce_add_console_app (ConsoleApplication
-    PRODUCT_NAME "ConsoleApplication"
-	COMPANY_NAME "StoneyDSP"
-	DESCRIPTION "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
-)
+#juce_add_console_app (ConsoleApplication
+#    PRODUCT_NAME "ConsoleApplication"
+#	COMPANY_NAME "StoneyDSP"
+#	DESCRIPTION "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
+#)
 
 # Check language requirements.
 if (CMAKE_VERSION VERSION_GREATER 3.12)
@@ -41,7 +48,7 @@ configure_file (
 # path for this header will be automatically added to the target. The main function of the
 # JuceHeader is to include all the JUCE module headers for a particular target; if you're happy to
 # include module headers directly, you probably don't need to call this.
-juce_generate_juce_header(ConsoleApplication)
+#juce_generate_juce_header(ConsoleApplication)
 
 # `target_sources` adds source files to a target. We pass the target that needs the sources as the
 # first argument, then a visibility parameter for the sources which should normally be PRIVATE.
@@ -95,9 +102,32 @@ target_compile_definitions(ConsoleApplication
         JUCE_USE_CURL=0    # If you remove this, add `NEEDS_CURL TRUE` to the `juce_add_console_app` call
 )
 
+# Host handling
+if(WIN32)
+    add_compile_definitions(WINDOWS=1)
+endif ()
+
+if (UNIX AND NOT APPLE)
+    add_compile_definitions(LINUX=1)
+endif ()
+
+if (APPLE)
+    add_compile_definitions(APPLE=1)
+endif ()
+
+if(${CMAKE_BUILD_TYPE} MATCHES Debug)
+    add_compile_definitions(_DEBUG=1)
+else()
+    add_compile_definitions(NDEBUG=1)
+endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
+
+# Export options
+set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+set(CMAKE_ENABLE_EXPORTS on)
+
 # Add tests and install targets if needed. Comment out if not required.
-include(CPACK)
-include(CTest)
+#include(CPACK)
+#include(CTest)
 
 # Enable testing. Comment out if not required.
-enable_testing()
+#enable_testing()
