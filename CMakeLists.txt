@@ -16,10 +16,10 @@ project (
 )
 
 add_executable (ConsoleApplication
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.h"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h"
+	"src/main.cpp"
+	"src/main.h"
+	"cfg/ConsoleApplication_Config.h.in"
+	"cfg/ConsoleApplication_Config.h"
 )
 
 # `juce_add_console_app` adds an executable target with the name passed as the first argument
@@ -39,12 +39,17 @@ endif()
 
 # Add configuration file.
 configure_file (
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h"
+	"cfg/ConsoleApplication_Config.h.in"
+	"cfg/ConsoleApplication_Config.h"
 )
 
 target_include_directories(ConsoleApplication PRIVATE ${LUA_INCLUDE_DIR})
-target_link_libraries(ConsoleApplication PRIVATE ${LUA_LIBRARIES})
+
+target_link_libraries(ConsoleApplication
+	PRIVATE
+	${LUA_LIBRARIES}
+	fmt::fmt
+)
 
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
 # into the build tree. This header should be included with `#include <JuceHeader.h>`. The include
@@ -59,10 +64,10 @@ target_link_libraries(ConsoleApplication PRIVATE ${LUA_LIBRARIES})
 # This is a standard CMake command.
 target_sources(ConsoleApplication
     PRIVATE
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.h"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/ConsoleApplication_Config.h"
+	"src/main.cpp"
+	"src/main.h"
+	"cfg/ConsoleApplication_Config.h.in"
+	"cfg/ConsoleApplication_Config.h"
 )
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
