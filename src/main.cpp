@@ -30,8 +30,6 @@ int main(int argc, char* argv[])
 
     endFunction();
 
-    juce::ConsoleApplication app;
-
     Double a{ 1 };
 
     Double b{ 2 };
