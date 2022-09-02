@@ -42,12 +42,6 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ConsoleApplication PROPERTY CXX_STANDARD 20)
 endif()
 
-# `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
-# into the build tree. This header should be included with `#include <JuceHeader.h>`. The include
-# path for this header will be automatically added to the target. The main function of the
-# JuceHeader is to include all the JUCE module headers for a particular target; if you're happy to
-# include module headers directly, you probably don't need to call this.
-#juce_generate_juce_header(ConsoleApplication)
 
 # `target_sources` adds source files to a target. We pass the target that needs the sources as the
 # first argument, then a visibility parameter for the sources which should normally be PRIVATE.
@@ -61,8 +55,6 @@ target_sources(ConsoleApplication
 	"cfg/ConsoleApplication_Config.h"
 )
 
-find_package (CppUnit CONFIG REQUIRED)
-find_package (fmt CONFIG REQUIRED)
 find_package (JUCE CONFIG REQUIRED)
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
@@ -78,10 +70,8 @@ find_package (JUCE CONFIG REQUIRED)
 # target above, you would need to link to it here too.
 # This is a standard CMake command.
  target_link_libraries(ConsoleApplication
-     PRIVATE
+    PRIVATE
 	# ConsoleApplication_Data           # If we'd created a binary data target above, we'd link to it here
-	fmt::fmt
-	CppUnit
 	juce::juce_core
 	PUBLIC
 	juce::juce_recommended_config_flags
