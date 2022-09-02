@@ -30,44 +30,38 @@ int main(int argc, char* argv[])
 
     endFunction();
 
-    juce::ConsoleApplication app;
+    Double a{ 1 };
 
-    app.addHelpCommand ("--help|-h", "Usage:", true);
+    Double b{ 2 };
 
-    // Double a{ 1 };
+    Double c{ 3 };
 
-    // Double b{ 2 };
+    Double d{ a };
 
-    // Double c{ 3 };
+    Double e{ 10 };
 
-    // Double d{ a };
+    endFunction();
 
-    // Double e{ 10 };
+    print(CENTRE, "Addition Tests");
+    lineBreak();
+    e = e + d + c + b + a;
+    endFunction();
 
+    print(CENTRE, "Subtraction Tests");
+    e = e - d - c - b - a;
+    endFunction();
+
+    print(CENTRE, "Multiplication Tests");
+    e = e * d * c * b * a;
+    endFunction();
+
+    print(CENTRE, "Division Tests");
+    e = e / d / c / b / a;
+    endFunction();
+
+    // print("Modulo Tests");
+    // e = e % d % c % b % a;
     // endFunction();
-
-    // //app.fail("?", 1);
-
-    // print(CENTRE, "Addition Tests");
-    // lineBreak();
-    // e = e + d + c + b + a;
-    // endFunction();
-
-    // print(CENTRE, "Subtraction Tests");
-    // e = e - d - c - b - a;
-    // endFunction();
-
-    // print(CENTRE, "Multiplication Tests");
-    // e = e * d * c * b * a;
-    // endFunction();
-
-    // print(CENTRE, "Division Tests");
-    // e = e / d / c / b / a;
-    // endFunction();
-
-    //print("Modulo Tests");
-    //e = e % d % c % b % a;
-    //endFunction();
 
     return outro();
 }
