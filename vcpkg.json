@@ -3,7 +3,8 @@
     "version-string": "0.0.1",
     "description": [ "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support" ],
     "dependencies": [
-        "cppunit",
-        "fmt"
+        "vcpkg-cmake",
+        "vcpkg-cmake-config",
+        "vcpkg-cmake-get-vars"
     ]
 }
