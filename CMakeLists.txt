@@ -20,8 +20,6 @@ project (
 	LANGUAGES C CXX
 )
 
-find_package (JUCE CONFIG REQUIRED)
-
 add_executable (ConsoleApplication
 	"src/main.cpp"
 	"src/main.h"
@@ -56,6 +54,8 @@ target_sources(ConsoleApplication
 	"cfg/ConsoleApplication_Config.h.in"
 	"cfg/ConsoleApplication_Config.h"
 )
+
+find_package (JUCE CONFIG REQUIRED)
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
 # a new static library target that will include all the binary resources. There is an optional
