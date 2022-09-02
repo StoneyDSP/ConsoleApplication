@@ -30,8 +30,8 @@
 /** Main.
  * @brief Entry point for program execution.
  *
- * @param argc
- * @param argv
+ * @param argc Number of strings in array argv
+ * @param argv Array of command-line argument strings
  * @return int
  */
 int main(int argc, char* argv[]);

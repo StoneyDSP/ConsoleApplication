@@ -16,8 +16,8 @@
 /** Main.
  * @brief Entry point for program execution.
  *
- * @param argc int
- * @param argv char**
+ * @param argc Number of strings in array argv
+ * @param argv Array of command-line argument strings
  * @return int
  */
 int main(int argc, char* argv[])
@@ -30,15 +30,23 @@ int main(int argc, char* argv[])
 
     endFunction();
 
-    Double a{ 1 };
+    // Display each command-line argument.
+    for (int i = 1; i < argc; i++)
+    {
+        print(CENTRE, argv[i]);
+    }
 
-    Double b{ 2 };
+    wait();
 
-    Double c{ 3 };
+    Float a{ 1 };
 
-    Double d{ a };
+    Float b{ 2 };
 
-    Double e{ 10 };
+    Float c{ 3 };
+
+    Float d{ a };
+
+    Float e{ 10 };
 
     endFunction();
 
