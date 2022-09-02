@@ -1,28 +1,43 @@
 {
     "configurations": [
+
         {
-            "name": "CMake: build and run x64",
+            "name": "C/C++: cl.exe build and debug active file",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/out/build/x64/CMakeProject1.exe",
-            "args":[],
+            "program": "${workspaceFolder}\\out\\build\\x64\\ConsoleApplication.exe",
+            "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "externalTerminal",
-            "preLaunchTask": "CMake: build"
+            "preLaunchTask": "C/C++: cl.exe build active file"
         },
         {
-            "name": "CMake: build and run x86",
-            "type": "cppvsdbg",
+            "name": "C/C++: cpp.exe build and debug active file",
+            "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/out/build/x86/CMakeProject1.exe",
-            "args":[],
+            "program": "${workspaceFolder}\\out\\build\\x64\\ConsoleApplication.exe",
+            "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
-            "console": "externalTerminal",
-            "preLaunchTask": "CMake: build"
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: cpp.exe build active file"
         }
     ],
     "version": "2.0.0"
