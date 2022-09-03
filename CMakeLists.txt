@@ -123,4 +123,4 @@ endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 #include(CTest)
 
 # Enable testing. Comment out if not required.
-#enable_testing()
+enable_testing()
