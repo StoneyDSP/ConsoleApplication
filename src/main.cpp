@@ -16,8 +16,8 @@
 /** Main.
  * @brief Entry point for program execution.
  *
- * @param argc int
- * @param argv char**
+ * @param argc Number of strings in array argv
+ * @param argv Array of command-line argument strings
  * @return int
  */
 int main(int argc, char* argv[])
@@ -30,17 +30,23 @@ int main(int argc, char* argv[])
 
     endFunction();
 
-    juce::ConsoleApplication app;
+    // Display each command-line argument.
+    for (int i = 1; i < argc; i++)
+    {
+        print(CENTRE, argv[i]);
+    }
 
-    Double a{ 1 };
+    wait();
 
-    Double b{ 2 };
+    Float a{ 1 };
 
-    Double c{ 3 };
+    Float b{ 2 };
 
-    Double d{ a };
+    Float c{ 3 };
 
-    Double e{ 10 };
+    Float d{ a };
+
+    Float e{ 10 };
 
     endFunction();
 

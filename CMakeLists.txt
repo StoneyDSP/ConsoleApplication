@@ -55,9 +55,11 @@ target_sources(ConsoleApplication
 	"cfg/ConsoleApplication_Config.h"
 )
 
-#find_package (CppUnit CONFIG REQUIRED)
-#find_package (fmt CONFIG REQUIRED)
 #find_package (JUCE CONFIG REQUIRED)
+
+# Include sub-folder/projects to the build tree.
+add_subdirectory ("src")
+add_subdirectory ("cfg")
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
 # a new static library target that will include all the binary resources. There is an optional
@@ -79,11 +81,6 @@ target_sources(ConsoleApplication
 	juce::juce_recommended_config_flags
 	juce::juce_recommended_warning_flags
  )
-
-
-# Include sub-folder/projects to the build tree.
-add_subdirectory ("src")
-add_subdirectory ("cfg")
 
 # `target_compile_definitions` adds some preprocessor definitions to our target. In a Projucer
 # project, these might be passed in the 'Preprocessor Definitions' field. JUCE modules also make use
@@ -126,4 +123,4 @@ endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 #include(CTest)
 
 # Enable testing. Comment out if not required.
-#enable_testing()
+enable_testing()
