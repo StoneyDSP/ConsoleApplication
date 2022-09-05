@@ -13,21 +13,18 @@
 
 #include "main.h"
 
-CppUnit::Asserter testing;
-
 /** Main.
  * @brief Entry point for program execution.
  *
  * @param argc int
  * @param argv char**
- * @param envp char**
  * @return int
  */
-int main(int argc, char* argv[], char* envp[])
+int main(int argc, char* argv[])
 {
     using namespace stoneydsp;
 
-    ignore(argc, argv, envp);
+    ignore(argc, argv);
 
     intro();
 
@@ -47,8 +44,6 @@ int main(int argc, char* argv[], char* envp[])
 
     endFunction();
 
-    //app.fail("?", 1);
-
     print(CENTRE, "Addition Tests");
     lineBreak();
     e = e + d + c + b + a;
@@ -66,9 +61,9 @@ int main(int argc, char* argv[], char* envp[])
     e = e / d / c / b / a;
     endFunction();
 
-    //print("Modulo Tests");
-    //e = e % d % c % b % a;
-    //endFunction();
+    // print("Modulo Tests");
+    // e = e % d % c % b % a;
+    // endFunction();
 
     return outro();
 }
