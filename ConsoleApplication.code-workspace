@@ -135,7 +135,7 @@
 		"git.requireGitUserConfig": true,
 		"git.pullTags": true,
 		"git.scanRepositories": [
-			"E:/StoneyDSP/"
+			"${workspaceRoot}\\"
 		],
 		"git.showActionButton": {
 			"commit": true,
