@@ -1,9 +1,21 @@
-*_Config.h
+############################################################
+# StoneyDSP - Start
+############################################################
+
+*.vcxproj*
+CMakeUserPresets.json
+MinSizeRel
+RelWithDebInfo
 
 *.tcl
 *.dll
 compile_commands.json
 CMakeCache.txt
+
+############################################################
+# StoneyDSP - End
+############################################################
+
 
 ############################################################
 # CMake - Start
@@ -102,8 +114,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 # Ignore the executable
-/vcpkg
-/vcpkg.exe
+#/vcpkg
+#/vcpkg.exe
 
 # Visual Studio 2015 cache/options directory
 .vs/

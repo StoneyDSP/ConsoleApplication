@@ -55,7 +55,7 @@ target_sources(ConsoleApplication
 	"cfg/ConsoleApplication_Config.h"
 )
 
-#find_package (JUCE CONFIG REQUIRED)
+# find_package (JUCE CONFIG REQUIRED)
 
 # Include sub-folder/projects to the build tree.
 add_subdirectory ("src")

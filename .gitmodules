@@ -4,3 +4,6 @@
 [submodule "vcpkg"]
 	path = vcpkg
 	url = https://github.com/StoneyDSP/vcpkg.git
+[submodule "StoneyDSP"]
+	path = StoneyDSP
+	url = https://github.com/StoneyDSP/StoneyDSP.git
