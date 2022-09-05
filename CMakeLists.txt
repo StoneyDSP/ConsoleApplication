@@ -59,6 +59,7 @@ target_sources(ConsoleApplication
 
 # Include sub-folder/projects to the build tree.
 add_subdirectory ("JUCE")
+add_subdirectory ("StoneyDSP")
 add_subdirectory ("src")
 add_subdirectory ("cfg")
 
