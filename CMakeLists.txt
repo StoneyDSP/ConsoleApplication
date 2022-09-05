@@ -58,6 +58,7 @@ target_sources(ConsoleApplication
 #find_package (JUCE CONFIG REQUIRED)
 
 # Include sub-folder/projects to the build tree.
+add_subdirectory ("JUCE")
 add_subdirectory ("src")
 add_subdirectory ("cfg")
 
