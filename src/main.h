@@ -25,14 +25,14 @@
 
 // 3rd Party Library includes
 #include <juce_core/juce_core.h>
-#include <stoneydsp_core/stoneydsp_core.h>
+//#include "../../StoneyDSP/modules/stoneydsp_core/stoneydsp_core.h"
 
-/** Main.
+/** main.
  * @brief Entry point for program execution.
  *
- * @param argc Number of strings in array argv
- * @param argv Array of command-line argument strings
- * @return int
+ * @param argc Number of strings in array argv.
+ * @param argv Array of command-line argument strings.
+ * @return Exit code.
  */
 int main(int argc, char* argv[]);
 
