@@ -10,6 +10,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication", "ConsoleApplication.vcxproj", "{FCED9DF2-AC68-3187-9BF7-9EF513634E36}"
 	ProjectSection(ProjectDependencies) = postProject
 		{03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7} = {03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7}
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C} = {7EDB2765-6882-3DFF-95F8-2C69F9014C8C}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RUN_TESTS", "RUN_TESTS.vcxproj", "{2B755C33-5C81-3F21-BC63-81A266679BC2}"
@@ -19,6 +20,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RUN_TESTS", "RUN_TESTS.vcxp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "..\\ZERO_CHECK.vcxproj", "{03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7}"
 	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stoneydsp_core", "..\StoneyDSP\modules\stoneydsp_core.vcxproj", "{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7} = {03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7}
 	EndProjectSection
 EndProject
 Global
@@ -53,6 +59,14 @@ Global
 		{03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
 		{03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{03A28E75-791C-34AA-8CC0-A2CE9FD3CAC7}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.Debug|x64.ActiveCfg = Debug|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.Debug|x64.Build.0 = Debug|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.Release|x64.ActiveCfg = Release|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.Release|x64.Build.0 = Release|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{7EDB2765-6882-3DFF-95F8-2C69F9014C8C}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACD682DD-1102-397D-BC38-F4C04A636607}
