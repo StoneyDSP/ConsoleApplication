@@ -1,21 +1,24 @@
 {
 	"C_Cpp.vcpkg.enabled": true,
-	"C_Cpp.default.cppStandard": "",
-	"C_Cpp.default.cStandard": "",
-	"C_Cpp.default.windowsSdkVersion": "10.0.20348.0",
-	"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-	"C_Cpp.configurationWarnings": "Enabled",
-	"C_Cpp.loggingLevel": "Debug",
-	"C_Cpp.default.defines": [
-		"UNICODE",
-		"_UNICODE"
+	"C_Cpp.autoAddFileAssociations": true,
+	"C_Cpp.commentContinuationPatterns": [
+		"/**"
 	],
-	"C_Cpp.default.mergeConfigurations": true,
+	"C_Cpp.configurationWarnings": "Enabled",
+	"C_Cpp.debugShortcut": true,
+	"C_Cpp.default.cStandard": "",
+	"C_Cpp.default.cppStandard": "",
+	"C_Cpp.default.browse.limitSymbolsToIncludedHeaders": true,
 	"C_Cpp.default.browse.path": [
 		"${default}",
 		"${workspaceFolder}/**",
 		"${vcpkgRoot}/x64-windows/include",
 		"${vcpkgRoot}/x86-windows/include"
+	],
+	"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+	"C_Cpp.default.defines": [
+		"UNICODE",
+		"_UNICODE"
 	],
 	"C_Cpp.default.includePath": [
 		"${default}",
@@ -23,6 +26,13 @@
 		"${vcpkgRoot}/x64-windows/include",
 		"${vcpkgRoot}/x86-windows/include"
 	],
+	"C_Cpp.default.mergeConfigurations": true,
+	"C_Cpp.default.windowsSdkVersion": "10.0.20348.0",
+	"C_Cpp.dimInactiveRegions": true,
+	"C_Cpp.doxygen.generateOnType": true,
+	"C_Cpp.doxygen.generatedStyle": "/**",
+	"C_Cpp.enhancedColorization": "Enabled",
+	"C_Cpp.exclusionPolicy": "checkFilesAndFolders",
 	"C_Cpp.files.exclude": {
 		"**/.vscode": true,
 		"**/.vs": true,
@@ -30,16 +40,23 @@
 		"**/css": true,
 		"**/docs": true
 	},
+	"C_Cpp.loggingLevel": "Debug",
+	"C_Cpp.intelliSenseEngine": "Default",
 	"cmake.useCMakePresets": "auto",
-	"cmake.generator": "Visual Studio 17 2022",
+	"cmake.configureEnvironment": {
+		"VCPKG_DEFAULT_TRIPLET": "x64-windows",
+		"VCPKG_ROOT": "${vcpkgRoot}"
+	},
 	"cmake.configureOnOpen": true,
 	"cmake.configureOnEdit": true,
 	"cmake.skipConfigureIfCachePresent": false,
 	"cmake.saveBeforeBuild": true,
+	"cmake.clearOutputBeforeBuild": true,
 	"cmake.buildBeforeRun": true,
 	"cmake.buildTask": false,
-	"cmake.sourceDirectory": "${workspaceFolder}",
-	"cmake.clearOutputBeforeBuild": true,
+	"cmake.setBuildTypeOnMultiConfig": true,
+	"cmake.exportCompileCommandsFile": true,
+	"cmake.generator": "Visual Studio 17 2022",
 	"cmake.cmakeCommunicationMode": "automatic",
 	"cmake.statusbar.visibility": "default",
 	"cmake.mingwSearchDirs": [
@@ -111,8 +128,59 @@
 		"xstddef": "cpp",
 		"xstring": "cpp",
 		"xtr1common": "cpp",
-		"xutility": "cpp"
+		"xutility": "cpp",
+		"algorithm": "cpp",
+		"any": "cpp",
+		"array": "cpp",
+		"charconv": "cpp",
+		"chrono": "cpp",
+		"codecvt": "cpp",
+		"condition_variable": "cpp",
+		"coroutine": "cpp",
+		"csignal": "cpp",
+		"cstdarg": "cpp",
+		"cwctype": "cpp",
+		"deque": "cpp",
+		"filesystem": "cpp",
+		"format": "cpp",
+		"forward_list": "cpp",
+		"fstream": "cpp",
+		"functional": "cpp",
+		"future": "cpp",
+		"iomanip": "cpp",
+		"iostream": "cpp",
+		"list": "cpp",
+		"locale": "cpp",
+		"map": "cpp",
+		"mutex": "cpp",
+		"numeric": "cpp",
+		"optional": "cpp",
+		"queue": "cpp",
+		"random": "cpp",
+		"ratio": "cpp",
+		"regex": "cpp",
+		"set": "cpp",
+		"shared_mutex": "cpp",
+		"source_location": "cpp",
+		"stack": "cpp",
+		"stop_token": "cpp",
+		"strstream": "cpp",
+		"thread": "cpp",
+		"typeindex": "cpp",
+		"unordered_map": "cpp",
+		"unordered_set": "cpp",
+		"variant": "cpp",
+		"xhash": "cpp",
+		"xlocbuf": "cpp",
+		"xlocmes": "cpp",
+		"xlocmon": "cpp",
+		"xloctime": "cpp",
+		"xtree": "cpp"
 	},
+	"json.schemaDownload.enable": true,
+	"json.validate.enable": true,
+	"json.format.enable": true,
+	"json.format.keepLines": false,
 	"json.schemas": [
 		{
 			"fileMatch": [
@@ -121,10 +189,20 @@
 			"url": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json"
 		}
 	],
-	"git.enabled": true,
+	"powershell.powerShellDefaultVersion": "PowerShell Core 7 (x64)",
+	"powershell.enableProfileLoading": true,
+	"powershell.startAutomatically": true,
+	"powershell.promptToUpdatePowerShell": true,
+	"breadcrumbs.enabled": true,
+	"breadcrumbs.filePath": "on",
+	"breadcrumbs.symbolPath": "on",
+	"breadcrumbs.icons": true,
+	"breadcrumbs.symbolSortOrder": "position",
+	"git.autorefresh": true,
 	"git.autofetch": "all",
 	"git.detectSubmodules": true,
 	"git.detectSubmodulesLimit": 10,
+	"git.enabled": true,
 	"git.ignoreSubmodules": false,
 	"git.requireGitUserConfig": true,
 	"git.pullTags": true,
@@ -138,6 +216,7 @@
 	},
 	"git.fetchOnPull": true,
 	"git.showProgress": true,
+	"github.gitProtocol": "https",
 	"github.gitAuthentication": true,
 	"githubPullRequests.queries": [
 		{
@@ -166,5 +245,7 @@
 			"label": "Recent Issues",
 			"query": "state:open repo:${owner}/${repository} sort:updated-desc"
 		}
-	]
+	],
+	"doxdocgen.generic.useGitUserName": true,
+	"doxdocgen.generic.useGitUserEmail": true
 }
