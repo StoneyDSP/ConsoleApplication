@@ -77,6 +77,7 @@ add_subdirectory ("cfg")
     PRIVATE
 	# ConsoleApplication_Data           # If we'd created a binary data target above, we'd link to it here
 	juce::juce_core
+	stoneydsp_core
 	PUBLIC
 	juce::juce_recommended_config_flags
 	juce::juce_recommended_warning_flags
