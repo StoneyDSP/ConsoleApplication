@@ -17,7 +17,7 @@
 #define MAIN_H_INCLUDED
 
 // Config file before modules!!! (use Forced Include if possible(?))
-//#include <ConsoleApplication_Config.h>
+#include "../../cmake/ConsoleApplication_Config.h"
 
 // Standard Library includes
 #include <iostream>

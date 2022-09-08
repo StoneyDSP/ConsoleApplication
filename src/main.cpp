@@ -28,6 +28,8 @@ int main(int argc, char* argv[])
 
     intro();
 
+    print(CENTRE, cmakeCfgIntDir);
+
     endFunction();
 
     // Display each command-line argument.
