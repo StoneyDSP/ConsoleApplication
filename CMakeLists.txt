@@ -23,7 +23,7 @@ project (ConsoleApplication LANGUAGES C CXX)
 add_executable (ConsoleApplication
 	${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
-	${CMAKE_CURRENT_SOURCE_DIR}/cmake/ConsoleApplicationConfig.h
+	${CMAKE_CURRENT_BINARY_DIR}/cmake/ConsoleApplicationConfig.h
 )
 
 # make cache variables for install destinations
