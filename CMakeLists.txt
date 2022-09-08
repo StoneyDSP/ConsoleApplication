@@ -20,11 +20,37 @@ project (
 	LANGUAGES C CXX
 )
 
+# create config file
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ConsoleApplication_Config.h.in
+  ${CMAKE_CURRENT_BINARY_DIR}/cmake/ConsoleApplication_Config.h
+)
+
 add_executable (ConsoleApplication
-	"src/main.cpp"
-	"src/main.h"
-	"cfg/ConsoleApplication_Config.h.in"
-	"cfg/ConsoleApplication_Config.h"
+	${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
+	${CMAKE_CURRENT_BINARY_DIR}/cmake/ConsoleApplication_Config.h
+)
+
+# specify the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+find_package(JUCE CONFIG REQUIRED)
+find_package(StoneyDSP CONFIG REQUIRED)
+
+# Include sub-folder/projects to the build tree.
+add_subdirectory (src)
+add_subdirectory (cmake)
+
+# set version
+set(version 0.0.0.1)
+
+set_property(TARGET ConsoleApplication PROPERTY VERSION ${version})
+set_property(TARGET ConsoleApplication PROPERTY SOVERSION 0)
+set_property(TARGET ConsoleApplication PROPERTY INTERFACE_ConsoleApplication_MAJOR_VERSION 3)
+set_property(TARGET ConsoleApplication APPEND PROPERTY COMPATIBLE_INTERFACE_STRING
+    ConsoleApplication_MAJOR_VERSION
 )
 
 # `juce_add_console_app` adds an executable target with the name passed as the first argument
@@ -37,102 +63,37 @@ add_executable (ConsoleApplication
 #	DESCRIPTION "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
 #)
 
-# Check language requirements.
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET ConsoleApplication PROPERTY CXX_STANDARD 20)
-endif()
-
-# Host handling:
-if(WIN32)
-    add_compile_definitions(WINDOWS=1)
-    message(STATUS "Setting Compile Definition WINDOWS=1")
-endif ()
-
-if (UNIX AND NOT APPLE)
-    add_compile_definitions(LINUX=1)
-    message(STATUS "Setting Compile Definition LINUX=1")
-endif ()
-
-if (APPLE)
-    add_compile_definitions(APPLE=1)
-    message(STATUS "Setting Compile Definition APPLE=1")
-endif ()
-
-# Debug definitions:
-if(${CMAKE_BUILD_TYPE} MATCHES Debug)
-    add_compile_definitions(_DEBUG=1)
-    message(STATUS "Setting Compile Definition _DEBUG=1")
-else()
-    add_compile_definitions(NDEBUG=1)
-    message(STATUS "Setting Compile Definition NDEBUG=1")
-endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
-
-# Check if we are in the top-level project or not:
-if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-    message(STATUS "[${PROJECT_NAME}] is a sub-project of [${CMAKE_PROJECT_NAME}]")
-else()
-    message(STATUS "[${CMAKE_PROJECT_NAME}] is a top-level project")
-endif()
-
-# Set install directory
-if(DEFINED CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    message(
-        STATUS
-        "CMAKE_INSTALL_PREFIX is not set\n"
-        "Default value: ${CMAKE_INSTALL_PREFIX}\n"
-        "Will set it to ${CMAKE_SOURCE_DIR}/install"
-    )
-    set(CMAKE_INSTALL_PREFIX
-        "${CMAKE_SOURCE_DIR}/install"
-        CACHE PATH "Where the library will be installed to" FORCE
-    )
-else()
-    message(
-        STATUS
-        "CMAKE_INSTALL_PREFIX was already set\n"
-        "Current value: ${CMAKE_INSTALL_PREFIX}"
-    )
-endif()
-
-# `target_sources` adds source files to a target. We pass the target that needs the sources as the
-# first argument, then a visibility parameter for the sources which should normally be PRIVATE.
-# Finally, we supply a list of source files that will be built into the target.
-# This is a standard CMake command.
-target_sources(ConsoleApplication
-    PRIVATE
-	"src/main.cpp"
-	"src/main.h"
-	"cfg/ConsoleApplication_Config.h.in"
-	"cfg/ConsoleApplication_Config.h"
-)
-
-# find_package (JUCE CONFIG REQUIRED)
-
-# Include sub-folder/projects to the build tree.
-add_subdirectory ("src")
-add_subdirectory ("cfg")
-
-# If the target needs extra binary assets, they can be added here. The first argument is the name of
-# a new static library target that will include all the binary resources. There is an optional
-# `NAMESPACE` argument that can specify the namespace of the generated binary data class. Finally,
-# the SOURCES argument should be followed by a list of source files that should be built into the
-# static library. These source files can be of any kind (wav data, images, fonts, icons etc.).
-# Conversion to binary-data will happen when the target is built.
-# juce_add_binary_data(${CMAKE_PROJECT_NAME}_Data SOURCES ...)
 
 # `target_link_libraries` links libraries and JUCE modules to other libraries or executables.
 # Inter-module dependencies are resolved automatically. If you'd generated a binary data
 # target above, you would need to link to it here too.
 # This is a standard CMake command.
- target_link_libraries(ConsoleApplication
+target_link_libraries(ConsoleApplication
     PRIVATE
-	# ConsoleApplication_Data           # If we'd created a binary data target above, we'd link to it here
-	juce::juce_core
-	stoneydsp_core
-	PUBLIC
-	juce::juce_recommended_config_flags
-	juce::juce_recommended_warning_flags
- )
+    # ConsoleApplication_Data           # If we'd created a binary data target above, we'd link to it here
+    juce::juce_core
+    StoneyDSP::StoneyDSP_Core
+    PUBLIC
+    juce::juce_recommended_config_flags
+    juce::juce_recommended_warning_flags
+)
+
+# specify the C++ standard
+#if (CMAKE_VERSION VERSION_GREATER 3.12)
+#  set_property(TARGET ConsoleApplication PROPERTY CXX_STANDARD 20)
+#endif()
+
+
+# `target_sources` adds source files to a target. We pass the target that needs the sources as the
+# first argument, then a visibility parameter for the sources which should normally be PRIVATE.
+# Finally, we supply a list of source files that will be built into the target.
+# This is a standard CMake command.
+ target_sources(ConsoleApplication
+    PRIVATE
+	"src/main.cpp"
+	"src/main.h"
+	"cmake/ConsoleApplication_Config.h"
+)
 
 # `target_compile_definitions` adds some preprocessor definitions to our target. In a Projucer
 # project, these might be passed in the 'Preprocessor Definitions' field. JUCE modules also make use
@@ -147,6 +108,7 @@ target_compile_definitions(ConsoleApplication
         JUCE_USE_CURL=0    # If you remove this, add `NEEDS_CURL TRUE` to the `juce_add_console_app` call
 )
 
+
 # Export options
 #set(CMAKE_EXPORT_COMPILE_COMMANDS on)
 #set(CMAKE_ENABLE_EXPORTS on)
@@ -156,4 +118,4 @@ target_compile_definitions(ConsoleApplication
 #include(CTest)
 
 # Enable testing. Comment out if not required.
-enable_testing()
+# enable_testing()
