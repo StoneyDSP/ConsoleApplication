@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 
     intro();
 
-    print(CENTRE, ProjectInfo::cmakeCfgIntDir);
+    print(CENTRE, cmakeCfgIntDir);
 
     endFunction();
 
