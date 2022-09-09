@@ -18,7 +18,9 @@
 
 // Config file before modules!!! (use Forced Include if possible(?))
 #ifdef CONSOLE_APPLICATION_CONFIG_H_INCLUDED
-    #include "../cmake/ConsoleApplication_Config.h"
+    #include "../cmake/ConsoleApplicationConfig.h"
+#else
+    #include "../cmake/ConsoleApplicationConfig.h.in"
 #endif
 
 // Standard Library includes
