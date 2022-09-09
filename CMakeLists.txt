@@ -20,11 +20,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 project (ConsoleApplication LANGUAGES C CXX)
 
 # Add source to this project's executable.
-add_executable (ConsoleApplication
-	${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
-	${CMAKE_CURRENT_BINARY_DIR}/cmake/ConsoleApplicationConfig.h
-)
+add_executable (ConsoleApplication ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -114,9 +110,9 @@ target_link_libraries(ConsoleApplication
 # add source files to a target.
  target_sources(ConsoleApplication
   PRIVATE
-    src/main.cpp
-    src/main.h
-    cmake/ConsoleApplicationConfig.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
+    ${CMAKE_CURRENT_BINARY_DIR}/cmake/ConsoleApplicationConfig.h
 )
 
 # adds some preprocessor definitions to our target.
