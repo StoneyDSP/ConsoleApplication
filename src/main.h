@@ -29,7 +29,7 @@
 
 // 3rd Party Library includes
 #include <juce_core/juce_core.h>
-#include "../../StoneyDSP/modules/stoneydsp_core/stoneydsp_core.h"
+#include <stoneydsp_core.h>
 
 /** main.
  * @brief Entry point for program execution.
