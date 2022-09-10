@@ -8,11 +8,10 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-# Toolchain location. Stores result in the CMakeCache.
-set(CMAKE_TOOLCHAIN_FILE
-  ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake
-  CACHE STRING "Toolchain file"
-)
+# add required submodules
+if (NOT EXISTS GIT_FOUND)
+    add_subdirectory(extern)
+endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
