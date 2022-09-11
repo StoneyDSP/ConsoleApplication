@@ -1,6 +1,0 @@
-[submodule "vcpkg"]
-	path = vcpkg
-	url = ../../vcpkg.git
-[submodule "StoneyDSP"]
-	path = StoneyDSP
-	url = ../../StoneyDSP.git
