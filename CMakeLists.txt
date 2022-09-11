@@ -10,6 +10,7 @@ endif()
 
 # add required submodules
 if(GIT_FOUND AND EXISTS ${CMAKE_SOURCE_DIR}/.git)
+    set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 else()
     set_property(GLOBAL PROPERTY USE_FOLDERS YES)
     add_subdirectory(extern)
@@ -97,6 +98,10 @@ install(
 # Include sub-folder/projects to the build tree.
 add_subdirectory (src)
 add_subdirectory (cmake)
+
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
 
 # link libraries and modules to other libraries or executables.
 target_link_libraries(ConsoleApplication
