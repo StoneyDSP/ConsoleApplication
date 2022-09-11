@@ -17,7 +17,11 @@
 #define MAIN_H_INCLUDED
 
 // Config file before modules!!! (use Forced Include if possible(?))
-#include "../cfg/ConsoleApplication_Config.h"
+#ifdef CONSOLE_APPLICATION_CONFIG_H_INCLUDED
+    #include "../cmake/ConsoleApplicationConfig.h"
+#else
+    #include "../cmake/ConsoleApplicationConfig.h.in"
+#endif
 
 // Standard Library includes
 #include <iostream>
@@ -25,8 +29,7 @@
 
 // 3rd Party Library includes
 #include <juce_core/juce_core.h>
-//#include "../../StoneyDSP/modules/stoneydsp_core/stoneydsp_core.h"
-#include "../../StoneyDSP/modules/stoneydsp_core/stoneydsp_core.h"
+#include <stoneydsp_core.h>
 
 /** main.
  * @brief Entry point for program execution.
